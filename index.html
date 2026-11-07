@@ -11,8 +11,18 @@
   <main>
     <header>
       <h1>Calculator</h1>
+      <div class="theme-selector">
+        <fieldset>
+          <legend>Theme</legend>
+          <label for="theme-1">1</label>
+          <input type="radio" id="theme-1" name="theme" value="1" checked>
+          <label for="theme-2">2</label>
+          <input type="radio" id="theme-2" name="theme" value="2">
+          <label for="theme-3">3</label>
+          <input type="radio" id="theme-3" name="theme" value="3">
+        </fieldset>
+      </div>
     </header>
-
     <section aria-label="Calculator display">
       <output aria-live="polite" aria-atomic="true">0</output>
     </section>
