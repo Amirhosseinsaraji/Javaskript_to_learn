@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="A simple calculator application.">
   <title>Calculator App</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main>
@@ -24,9 +25,12 @@
       </div>
     </header>
     <section aria-label="Calculator display">
-      <output aria-live="polite" aria-atomic="true">0</output>
+      <output
+        class="calculator-display"
+        aria-live="polite"
+        aria-atomic="true"
+      >0</output>
     </section>
-
     <section aria-label="Calculator keypad">
       <!-- Calculator buttons will be added in a later issue. -->
     </section>
