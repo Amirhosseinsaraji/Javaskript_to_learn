@@ -30,3 +30,26 @@ body
     font-weight: 700;
     
 }
+main {
+    width: min(100% - 48px, 464px);
+    margin-inline: auto;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.calculator-display {
+    display: block;
+    width: 100%;
+    text-align: right;
+}
+section[aria-label="Calculator keypad"] {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+button[data-key="reset"],
+button[data-key="calculate"] {
+    grid-column: span 2;
+}
