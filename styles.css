@@ -53,3 +53,33 @@ button[data-key="reset"],
 button[data-key="calculate"] {
     grid-column: span 2;
 }
+button{
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 24px;
+    border: none;
+     border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    background-color: var(--light-key-background);
+    color: var(--key-text);
+    box-shadow: 0 4px 0 var(--light-key-shadow);
+}
+button[data-key="delete"],
+button[data-key="reset"] {
+    background-color: var(--key-background);
+    color: var(--white);
+    box-shadow: 0 4px 0 var(--key-shadow);
+}
+button[data-key="calculate"] {
+    background-color: var(--red-key-background);
+    color: var(--white);
+    box-shadow: 0 4px 0 var(--red-key-shadow);
+}
+button:hover{
+    filter: brightness(1.1);
+}
+button:focus-visible {
+    outline: 3px solid var(--display-background);
+    outline-offset: 3px;
+}
