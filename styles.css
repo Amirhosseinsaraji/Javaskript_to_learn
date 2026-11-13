@@ -19,6 +19,24 @@
     --white: hsl(0, 100%, 100%);
 }
 
+body[data-theme="2"] {
+    --main-background: hsl(0, 0%, 90%);
+    --toggle-keypad-background: hsl(0, 5%, 81%);
+    --display-background: hsl(0, 0%, 93%);
+
+    --key-background: hsl(185, 42%, 37%);
+    --key-shadow: hsl(185, 58%, 25%);
+
+    --red-key-background: hsl(25, 98%, 40%);
+    --red-key-shadow: hsl(25, 99%, 27%);
+
+    --light-key-background: hsl(0, 0%, 90%);
+    --light-key-shadow: hsl(35, 11%, 61%);
+
+    --key-text: hsl(60, 10%, 19%);
+    --white: hsl(0, 100%, 100%);
+}
+
 *{
     box-sizing: border-box;
 }
