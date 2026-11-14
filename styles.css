@@ -53,3 +53,18 @@ button[data-key="reset"],
 button[data-key="calculate"] {
     grid-column: span 2;
 }
+@media (max-width: 480px) {
+    main {
+        width: min(100% - 48px, 260px);
+    }
+    header h1 {
+    font-size: 1.25rem;
+}
+.calculator-display {
+    font-size: 1.25rem;
+}
+
+    section[aria-label="Calculator keypad"] {
+        gap: 8px;
+    }
+}
