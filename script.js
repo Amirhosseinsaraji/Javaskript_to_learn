@@ -20,6 +20,18 @@ buttons.forEach(button => {
             }
             display.textContent = currentInput;
         }
-        
+         else if(value === "DEL") {
+            currentInput = currentInput.slice(0, -1);
+
+            if(currentInput === "") {
+                currentInput = "0";
+            }
+
+            display.textContent = currentInput;
+        }
+         else if(value === "RESET") {
+            currentInput = "0";
+            display.textContent = currentInput;
+        }
     });
 });
