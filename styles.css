@@ -17,6 +17,7 @@
     
     --key-text: hsl(221, 14%, 31%);
     --white: hsl(0, 100%, 100%);
+    --calculate-text: hsl(0, 100%, 100%);
 }
 
 body[data-theme="2"] {
@@ -35,6 +36,23 @@ body[data-theme="2"] {
 
     --key-text: hsl(60, 10%, 19%);
     --white: hsl(0, 100%, 100%);
+}
+body[data-theme="3"] {
+    --main-background: hsl(268, 75%, 9%);
+    --toggle-keypad-background: hsl(268, 71%, 12%);
+    --display-background: hsl(268, 71%, 12%);
+
+    --key-background: hsl(281, 89%, 26%);
+    --key-shadow: hsl(285, 91%, 52%);
+
+    --red-key-background: hsl(176, 100%, 44%);
+    --red-key-shadow: hsl(177, 92%, 70%);
+
+    --light-key-background: hsl(268, 47%, 21%);
+    --light-key-shadow: hsl(290, 70%, 36%);
+
+    --key-text: hsl(52, 100%, 62%);
+    --calculate-text: hsl(198, 20%, 13%);
 }
 
 *{
@@ -91,7 +109,7 @@ button[data-key="reset"] {
 }
 button[data-key="calculate"] {
     background-color: var(--red-key-background);
-    color: var(--white);
+  color: var(--calculate-text);
     box-shadow: 0 4px 0 var(--red-key-shadow);
 }
 button:hover{
