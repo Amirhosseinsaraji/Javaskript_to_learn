@@ -54,5 +54,51 @@ buttons.forEach(button => {
             waitingForSecondNumber =false;
             display.textContent = currentInput;
         }
+        else if(value === "=") {
+    if(firstNumber !== null && operator !== null) {
+        const first = Number(firstNumber);
+        const second = Number(currentInput);
+        let result;
+
+        if(operator === "+") {
+            result = first + second;
+        }
+        else if(operator === "-") {
+            result = first - second;
+        }
+        else if(operator === "×") {
+            result = first * second;
+        }
+        else if(operator === "/") {
+            result = first / second;
+        }
+
+        currentInput = String(result);
+        display.textContent = currentInput;
+
+        firstNumber = currentInput;
+        operator = null;
+        waitingForSecondNumber = true;
+    }
+}
     });
+});
+document.addEventListener('keydown', (event) => {
+    const keyMap = {
+        '*': '×',
+        'Enter': '=',
+        'Backspace': 'DEL',
+        'Escape': 'RESET'
+    };
+
+    const buttonValue = keyMap[event.key] || event.key;
+
+    const matchingButton = Array.from(buttons).find(button => {
+        return button.textContent.trim() === buttonValue;
+    });
+
+    if (matchingButton) {
+        event.preventDefault();
+        matchingButton.click();
+    }
 });
