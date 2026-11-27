@@ -74,6 +74,8 @@ header {
   display: block;
   width: 100%;
   text-align: right;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 section[aria-label="Calculator keypad"] {
   display: grid;
