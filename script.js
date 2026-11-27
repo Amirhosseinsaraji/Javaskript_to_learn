@@ -32,9 +32,17 @@ const buttons = document.querySelectorAll(
   'section[aria-label="Calculator keypad"] button',
 );
 const themeOptions = document.querySelectorAll('input[name="theme"]');
+const savedTheme = localStorage.getItem("theme");
+const validThemes = ["1", "2", "3"];
+const initialTheme = validThemes.includes(savedTheme)
+  ? savedTheme
+  : window.matchMedia("(prefers-color-scheme: light)").matches ? "2" : "1";
+document.body.dataset.theme = initialTheme;
 themeOptions.forEach((option) => {
+  option.checked = option.value === initialTheme;
   option.addEventListener("change", () => {
     document.body.dataset.theme = option.value;
+    localStorage.setItem("theme", option.value);
   });
 });
 buttons.forEach((button) => {
