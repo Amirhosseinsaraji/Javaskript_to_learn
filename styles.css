@@ -1,139 +1,133 @@
 :root {
-    
-    --main-background: hsl(222, 26%, 31%);
-    --toggle-keypad-background: hsl(223, 31%, 20%);
-    --display-background: hsl(224, 36%, 15%);
+  --main-background: hsl(222, 26%, 31%);
+  --toggle-keypad-background: hsl(223, 31%, 20%);
+  --display-background: hsl(224, 36%, 15%);
 
-    
-    --key-background: hsl(225, 21%, 49%);
-    --key-shadow: hsl(224, 28%, 35%);
+  --key-background: hsl(225, 21%, 49%);
+  --key-shadow: hsl(224, 28%, 35%);
 
-    --red-key-background: hsl(6, 63%, 50%);
-    --red-key-shadow: hsl(6, 70%, 34%);
+  --red-key-background: hsl(6, 63%, 50%);
+  --red-key-shadow: hsl(6, 70%, 34%);
 
-    --light-key-background: hsl(0, 0%, 90%);
-    --light-key-shadow: hsl(28, 16%, 65%);
+  --light-key-background: hsl(0, 0%, 90%);
+  --light-key-shadow: hsl(28, 16%, 65%);
 
-    
-    --key-text: hsl(221, 14%, 31%);
-    --white: hsl(0, 100%, 100%);
-    --calculate-text: hsl(0, 100%, 100%);
+  --key-text: hsl(221, 14%, 31%);
+  --white: hsl(0, 100%, 100%);
+  --calculate-text: hsl(0, 100%, 100%);
 }
 
 body[data-theme="2"] {
-    --main-background: hsl(0, 0%, 90%);
-    --toggle-keypad-background: hsl(0, 5%, 81%);
-    --display-background: hsl(0, 0%, 93%);
+  --main-background: hsl(0, 0%, 90%);
+  --toggle-keypad-background: hsl(0, 5%, 81%);
+  --display-background: hsl(0, 0%, 93%);
 
-    --key-background: hsl(185, 42%, 37%);
-    --key-shadow: hsl(185, 58%, 25%);
+  --key-background: hsl(185, 42%, 37%);
+  --key-shadow: hsl(185, 58%, 25%);
 
-    --red-key-background: hsl(25, 98%, 40%);
-    --red-key-shadow: hsl(25, 99%, 27%);
+  --red-key-background: hsl(25, 98%, 40%);
+  --red-key-shadow: hsl(25, 99%, 27%);
 
-    --light-key-background: hsl(0, 0%, 90%);
-    --light-key-shadow: hsl(35, 11%, 61%);
+  --light-key-background: hsl(0, 0%, 90%);
+  --light-key-shadow: hsl(35, 11%, 61%);
 
-    --key-text: hsl(60, 10%, 19%);
-    --white: hsl(0, 100%, 100%);
+  --key-text: hsl(60, 10%, 19%);
+  --white: hsl(0, 100%, 100%);
 }
 body[data-theme="3"] {
-    --main-background: hsl(268, 75%, 9%);
-    --toggle-keypad-background: hsl(268, 71%, 12%);
-    --display-background: hsl(268, 71%, 12%);
+  --main-background: hsl(268, 75%, 9%);
+  --toggle-keypad-background: hsl(268, 71%, 12%);
+  --display-background: hsl(268, 71%, 12%);
 
-    --key-background: hsl(281, 89%, 26%);
-    --key-shadow: hsl(285, 91%, 52%);
+  --key-background: hsl(281, 89%, 26%);
+  --key-shadow: hsl(285, 91%, 52%);
 
-    --red-key-background: hsl(176, 100%, 44%);
-    --red-key-shadow: hsl(177, 92%, 70%);
+  --red-key-background: hsl(176, 100%, 44%);
+  --red-key-shadow: hsl(177, 92%, 70%);
 
-    --light-key-background: hsl(268, 47%, 21%);
-    --light-key-shadow: hsl(290, 70%, 36%);
+  --light-key-background: hsl(268, 47%, 21%);
+  --light-key-shadow: hsl(290, 70%, 36%);
 
-    --key-text: hsl(52, 100%, 62%);
-    --calculate-text: hsl(198, 20%, 13%);
+  --key-text: hsl(52, 100%, 62%);
+  --calculate-text: hsl(198, 20%, 13%);
 }
 
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
-body
-{
-    margin: 0;
-    min-height: 100vh;
-    font-family: 'League Spartan', sans-serif;
-    font-weight: 700;
-    
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
 }
 main {
-    width: min(100% - 48px, 464px);
-    margin-inline: auto;
+  width: min(100% - 48px, 464px);
+  margin-inline: auto;
 }
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .calculator-display {
-    display: block;
-    width: 100%;
-    text-align: right;
+  display: block;
+  width: 100%;
+  text-align: right;
 }
 section[aria-label="Calculator keypad"] {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
 }
 button[data-key="reset"],
 button[data-key="calculate"] {
-    grid-column: span 2;
+  grid-column: span 2;
 }
 @media (max-width: 480px) {
-    header h1 {
-        font-size: 1.25rem;
-    }
+  header h1 {
+    font-size: 1.25rem;
+  }
 
-    .calculator-display {
-        font-size: 1.25rem;
-    }
+  .calculator-display {
+    font-size: 1.25rem;
+  }
 
-    section[aria-label="Calculator keypad"] {
-        gap: 8px;
-    }
+  section[aria-label="Calculator keypad"] {
+    gap: 8px;
+  }
 }
 
 button {
-    font-family: inherit;
-    font-weight: 700;
-    font-size: 24px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    padding: 10px;
-    background-color: var(--light-key-background);
-    color: var(--key-text);
-    box-shadow: 0 4px 0 var(--light-key-shadow);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px;
+  background-color: var(--light-key-background);
+  color: var(--key-text);
+  box-shadow: 0 4px 0 var(--light-key-shadow);
 }
 
 button[data-key="delete"],
 button[data-key="reset"] {
-    background-color: var(--key-background);
-    color: var(--white);
-    box-shadow: 0 4px 0 var(--key-shadow);
+  background-color: var(--key-background);
+  color: var(--white);
+  box-shadow: 0 4px 0 var(--key-shadow);
 }
 
 button[data-key="calculate"] {
-    background-color: var(--red-key-background);
-    color: var(--calculate-text);
-    box-shadow: 0 4px 0 var(--red-key-shadow);
+  background-color: var(--red-key-background);
+  color: var(--calculate-text);
+  box-shadow: 0 4px 0 var(--red-key-shadow);
 }
-
 button:hover {
-    filter: brightness(1.1);
+  filter: brightness(1.1);
 }
 
 button:focus-visible {
-    outline: 3px solid var(--display-background);
-    outline-offset: 3px;
+  outline: 3px solid var(--display-background);
+  outline-offset: 3px;
 }
