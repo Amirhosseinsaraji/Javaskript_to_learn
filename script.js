@@ -17,7 +17,12 @@ function calculate(firstNumber, operator, secondNumber) {
       return first * second;
 
     case "/":
+      if (second === 0) {
+        return "Error"
+      }
+      else{
       return first / second;
+      }
     default:
       return null;
   }
@@ -39,14 +44,14 @@ buttons.forEach((button) => {
       if (waitingForSecondNumber) {
         currentInput = value;
         waitingForSecondNumber = false;
-      } else if (currentInput === "0") {
+      } else if (currentInput === "0" || currentInput === "Error") {
         currentInput = value;
       } else {
         currentInput += value;
       }
       display.textContent = currentInput;
     } else if (value === ".") {
-      if (waitingForSecondNumber) {
+      if (waitingForSecondNumber || currentInput === "Error") {
         currentInput = "0.";
         waitingForSecondNumber = false;
       } else if (!currentInput.includes(".")) {
@@ -54,6 +59,9 @@ buttons.forEach((button) => {
       }
       display.textContent = currentInput;
     } else if ("+-×/".includes(value)) {
+      if (currentInput === "Error") {
+        return;
+      }
       if (waitingForSecondNumber) {
         operator = value;
       } else {
@@ -62,7 +70,7 @@ buttons.forEach((button) => {
         waitingForSecondNumber = true;
       }
     } else if (value === "DEL") {
-      currentInput = currentInput.slice(0, -1);
+      currentInput = currentInput === "Error" ? "0" : currentInput.slice(0, -1);
 
       if (currentInput === "") {
         currentInput = "0";
@@ -85,11 +93,13 @@ buttons.forEach((button) => {
         else{
           const result = calculate(firstNumber, operator, currentInput)
           if(result !== null){
-            currentInput = String(result)
+            currentInput = typeof result === "number"
+              ? (Number.isFinite(result) ? String(Number(result.toPrecision(10))) : "Error")
+              : String(result);
             display.textContent = currentInput;
             firstNumber = null;
             operator = null;
-            waitingForSecondNumber = false;
+            waitingForSecondNumber = currentInput.includes("e");
           }
         }
     }
