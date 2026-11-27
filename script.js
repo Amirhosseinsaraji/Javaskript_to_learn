@@ -26,6 +26,12 @@ function calculate(firstNumber, operator, secondNumber) {
 const buttons = document.querySelectorAll(
   'section[aria-label="Calculator keypad"] button',
 );
+const themeOptions = document.querySelectorAll('input[name="theme"]');
+themeOptions.forEach((option) => {
+  option.addEventListener("change", () => {
+    document.body.dataset.theme = option.value;
+  });
+});
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     const value = button.textContent;
