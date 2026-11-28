@@ -58,8 +58,16 @@ body[data-theme="3"] {
 body {
   margin: 0;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   font-family: "League Spartan", sans-serif;
   font-weight: 700;
+}
+.attribution {
+  margin-top: auto;
+  padding: 2rem 1rem 1rem;
+  text-align: center;
+  font-size: 0.75rem;
 }
 main {
   width: min(100% - 48px, 464px);
