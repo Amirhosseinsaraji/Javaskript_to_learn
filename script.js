@@ -113,3 +113,20 @@ buttons.forEach((button) => {
     }
   });
 });
+
+// Keyboard shortcuts reuse the same handlers as the visible calculator keys.
+document.addEventListener("keydown", (event) => {
+  if (event.ctrlKey || event.altKey || event.metaKey || event.isComposing) return;
+  const target = event.target;
+  if (target instanceof Element && (target.isContentEditable || target.closest("input, textarea, select"))) return;
+  // Let the browser activate a focused button once with Enter or Space.
+  if (target instanceof Element && target.closest("button") && (event.key === "Enter" || event.key === " ")) return;
+
+  const keyMap = { "*": "×", Enter: "=", Backspace: "DEL", Escape: "RESET" };
+  const value = keyMap[event.key] || event.key;
+  const button = Array.from(buttons).find((item) => item.textContent.trim() === value);
+  if (button) {
+    event.preventDefault();
+    button.click();
+  }
+});
